@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industry — Industrial Solutions</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Poppins",sans-serif;color:#18233a;background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1190px,92%);margin:auto}
+.yellow{color:#ffb700}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#ffb700;color:#fff;border:0;padding:16px 35px;font-size:14px;font-weight:700;cursor:pointer;transition:.3s}
+.btn:hover{background:#e4a100;transform:translateY(-2px)}
+.section{padding:95px 0}
+.section-title{text-align:center;margin-bottom:55px}
+.section-title h2{font-size:38px;line-height:1.2;margin-bottom:12px}
+.section-title p{color:#8b91a0;font-size:15px}
+
+/* TOP BAR */
+.topbar{height:45px;background:#222;color:#fff;font-size:13px}
+.topbar .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.socials{display:flex;gap:28px}
+.socials a{opacity:.95;transition:.2s}
+.socials a:hover{color:#ffb700}
+
+/* HEADER */
+.header{height:76px;background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 18px rgba(0,0,0,.06)}
+.header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:700}
+.logo-mark{width:34px;height:43px;position:relative;display:inline-block}
+.logo-mark:before,.logo-mark:after{content:"";position:absolute;border:4px solid #f5ad00;border-top-color:transparent;border-bottom-color:transparent;border-radius:50%;top:2px;bottom:2px}
+.logo-mark:before{left:4px;width:12px;transform:rotate(12deg)}
+.logo-mark:after{right:4px;width:12px;transform:rotate(-12deg)}
+.logo-mark span{position:absolute;width:6px;height:39px;background:#f5ad00;border-radius:50%;left:14px;top:2px}
+.nav{display:flex;align-items:center;gap:31px;font-size:13px}
+.nav a{transition:.25s}
+.nav a:hover,.nav a.active{color:#f5ad00}
+.nav .blog-dropdown{position:relative}
+.nav .blog-dropdown-menu{position:absolute;top:100%;left:0;min-width:150px;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.10);padding:8px 0;display:none;z-index:1100}
+.nav .blog-dropdown:hover .blog-dropdown-menu{display:block}
+.nav .blog-dropdown-menu a{display:block;padding:9px 16px;white-space:nowrap}
+.nav .blog-dropdown-menu a:hover{background:#fafafa;color:#f5ad00}
+.menu-toggle{display:none;font-size:24px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:680px;display:grid;place-items:center;text-align:center;color:#fff;position:relative;background:
+linear-gradient(rgba(11,14,20,.64),rgba(11,14,20,.72)),
+url("https://preview.colorlib.com/theme/industry/img/header-bg.jpg") center/cover no-repeat,
+url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat}
+.hero-content{max-width:850px;padding:60px 20px}
+.hero small{font-size:15px;letter-spacing:1px}
+.hero h1{font-size:52px;line-height:1.15;margin:22px 0}
+.hero p{font-size:16px;line-height:1.8;margin:0 auto 28px;color:#f0f0f0;max-width:800px}
+
+/* SERVICES */
+.services{background:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:55px}
+.service{text-align:center;padding:15px 20px}
+.service-icon{width:80px;height:80px;margin:0 auto 35px;border:1px solid #cfd3da;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;color:#9ba4b3;font-size:28px;transition:.35s}
+.service:hover .service-icon{border-color:#ffb700;color:#ffb700;transform:translateY(-5px) rotate(3deg)}
+.service h3{font-size:21px;margin-bottom:15px}
+.service p{color:#8a91a0;line-height:1.7;font-size:15px}
+
+/* ABOUT + QUOTE */
+.about-band{background:#f8f8fc}
+.about-grid{display:grid;grid-template-columns:1.5fr .75fr;gap:70px;align-items:center}
+.about-copy .eyebrow{color:#ffb700;font-size:15px;margin-bottom:12px}
+.about-copy h2{font-size:39px;line-height:1.25;margin-bottom:28px}
+.about-copy .lead{font-size:16px;margin-bottom:10px}
+.about-copy p{color:#8a91a0;line-height:1.75;font-size:15px;margin-bottom:28px}
+.quote{min-height:455px;padding:30px 40px;background:
+linear-gradient(rgba(25,17,10,.74),rgba(25,17,10,.82)),
+url("https://preview.colorlib.com/theme/industry/img/about.jpg") center/cover no-repeat,
+url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=85") center/cover no-repeat;
+color:#fff}
+.quote h3{font-size:21px;margin-bottom:22px}
+.quote form{display:flex;flex-direction:column;gap:8px}
+.quote input,.quote select,.quote textarea{width:100%;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.75);padding:11px 12px;font-family:inherit;font-size:13px;outline:none}
+.quote option{color:#111}
+.quote textarea{height:100px;resize:none}
+.quote input::placeholder,.quote textarea::placeholder{color:#fff}
+.quote .btn{width:100%;margin-top:0}
+
+/* SECTORS */
+.sectors{background:#fff}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.card{overflow:hidden}
+.card-img{height:260px;overflow:hidden;position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease,filter .45s ease}
+.card-img:after{content:"";position:absolute;inset:0;background:rgba(255,183,0,0);transition:.45s;pointer-events:none}
+.card:hover .card-img img{transform:scale(1.08) rotate(1.5deg)}
+.card:hover .card-img:after{background:rgba(255,183,0,.28)}
+.card h3{font-size:20px;margin-top:18px;transition:.3s}
+.card:hover h3{color:#ffb700}
+.card p{color:#8a91a0;font-size:15px;line-height:1.7;margin-top:14px}
+
+/* COUNTERS */
+.counters{min-height:380px;background:
+linear-gradient(rgba(8,26,44,.76),rgba(8,26,44,.76)),
+url("https://preview.colorlib.com/theme/industry/img/counter-bg.jpg") center/cover no-repeat,
+url("https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+color:#fff;display:grid;align-items:center}
+.counter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:35px}
+.counter{text-align:center}
+.circle{width:100px;height:100px;border-radius:50%;background:#ffb700;margin:0 auto 20px;display:grid;place-items:center;font-size:27px;font-weight:700;outline:1px solid #ffb700;outline-offset:14px}
+.counter span{font-size:18px}
+
+/* PROJECTS */
+.projects{background:#fff}
+.project-grid{display:grid;grid-template-columns:2fr 1fr;gap:32px}
+.project-grid img{width:100%;height:100%;object-fit:cover}
+.project{overflow:hidden;position:relative;cursor:pointer}
+.project:after{content:"";position:absolute;inset:0;background:rgba(255,183,0,0);transition:.4s}
+.project:hover:after{background:rgba(255,183,0,.20)}
+.project:hover img{transform:scale(1.05) rotate(.7deg)}
+.project img{transition:.5s}
+.big-project{height:400px}
+.side-project{height:400px}
+.project-row{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+.small-project{height:280px}
+
+/* TESTIMONIAL */
+.testimonial{min-height:570px;background:
+linear-gradient(rgba(12,18,19,.73),rgba(12,18,19,.82)),
+url("https://preview.colorlib.com/theme/industry/img/feedback-bg.jpg") center/cover no-repeat,
+url("https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;color:#fff}
+.testimonial .section-title p{color:#ddd}
+.testimonial-wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:55px;align-items:center}
+.video-card{height:335px;position:relative;overflow:hidden;background:url("https://preview.colorlib.com/theme/industry/img/video-bg.jpg") center/cover no-repeat,url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1000&q=85") center/cover no-repeat}
+.video-card:after{content:"";position:absolute;inset:0;background:rgba(255,183,0,.78)}
+.play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:20px}
+.review h3{font-size:20px;margin-bottom:18px}
+.stars{color:#ffb700;margin-left:15px}
+.review p{font-size:15px;line-height:1.8;color:#eee}
+.dots{display:flex;gap:10px;margin-top:25px}
+.dot{width:11px;height:11px;background:#777;cursor:pointer}
+.dot.active{background:#ffb700}
+
+/* BLOG */
+.blog{background:#fff}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.blog-img{height:230px;overflow:hidden}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.blog-card:hover .blog-img img{transform:scale(1.07)}
+.meta{display:flex;justify-content:space-between;color:#8b91a0;font-size:12px;padding:12px 0;border-bottom:1px solid #eee}
+.blog-card h3{font-size:18px;margin:28px 0 15px;text-transform:uppercase;transition:.25s}
+.blog-card:hover h3{color:#ffb700}
+.blog-card p{color:#8a91a0;font-size:14px;line-height:1.7}
+
+/* FOOTER */
+.footer{background:#04091e;color:#fff;padding:70px 0 45px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1.2fr .8fr;gap:70px}
+.footer h3{font-size:20px;margin-bottom:24px}
+.footer p{color:#858a9c;font-size:14px;line-height:1.8}
+.newsletter{display:flex;margin-top:20px}
+.newsletter input{flex:1;border:0;padding:14px 18px;font-family:inherit;outline:none}
+.newsletter button{width:55px;border:0;background:#ffb700;color:#fff;font-size:18px}
+.footer-socials{display:flex;gap:22px;margin-top:20px;color:#fff}
+.copyright{margin-top:55px;color:#72778a;font-size:13px}
+.copyright .yellow{color:#ffb700}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .75s ease,transform .75s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+ .nav{display:none;position:absolute;left:0;right:0;top:76px;background:#fff;padding:20px;flex-direction:column;align-items:flex-start;gap:18px;box-shadow:0 8px 15px rgba(0,0,0,.08)}
+ .nav.open{display:flex}.menu-toggle{display:block}
+ .hero{min-height:610px}.hero h1{font-size:40px}
+ .service-grid,.cards,.blog-grid{grid-template-columns:1fr}
+ .about-grid,.testimonial-wrap{grid-template-columns:1fr}
+ .counter-grid{grid-template-columns:repeat(2,1fr)}
+ .project-grid{grid-template-columns:1fr}.big-project,.side-project{height:330px}
+ .footer-grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:560px){
+ .topbar{height:auto;padding:10px 0}.topbar .container{gap:10px;flex-direction:column}
+ .header{height:68px}.nav{top:68px}
+ .hero h1{font-size:33px}.hero p{font-size:14px}
+ .section{padding:70px 0}.section-title h2{font-size:30px}
+ .counter-grid{grid-template-columns:1fr 1fr}.circle{width:78px;height:78px;font-size:21px}
+ .counter span{font-size:14px}.quote{padding:25px}
+ .project-row{grid-template-columns:1fr}.small-project{height:260px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-solid fa-basketball"></i></a>
+      <a href="#"><i class="fa-brands fa-behance"></i></a>
+    </div>
+    <div>+880 012 3654 896 &nbsp;&nbsp; support@colorlib.com</div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="container">
+    <a class="logo" href="#home">
+      <span class="logo-mark"><span></span></span>
+      <span>Industry</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a class="active" href="#home">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#services">SERVICE</a>
+      <a href="#projects">PROJECTS</a>
+      <div class="blog-dropdown">
+        <a href="#blog">BLOG <i class="fa-solid fa-chevron-down" style="font-size:9px"></i></a>
+        <div class="blog-dropdown-menu">
+          <a href="#blog">Blog Home</a>
+          <a href="#blog">Blog Single</a>
+        </div>
+      </div>
+      <a href="#contact">CONTACT</a>
+      <a href="#elements">ELEMENTS</a>
+    </nav>
+
+    <div class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content reveal">
+    <small>DON’T LOOK FURTHER, HERE IS THE KEY</small>
+    <h1>We’re Industrial solution</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+    <a class="btn" href="#about">GET STARTED</a>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container service-grid">
+    <div class="service reveal">
+      <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <h3>Maintenance</h3>
+      <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+    </div>
+    <div class="service reveal">
+      <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+      <h3>Residental Service</h3>
+      <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+    </div>
+    <div class="service reveal">
+      <div class="service-icon"><i class="fa-solid fa-bug"></i></div>
+      <h3>Commercial Service</h3>
+      <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section about-band" id="about">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <div class="eyebrow">Brand new app to blow your mind</div>
+      <h2>We’ve made a life<br>that will change you</h2>
+      <div class="lead">We are here to listen from you deliver excellence</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <a class="btn" href="#contact">Get Started Now</a>
+    </div>
+
+    <div class="quote reveal" id="contact">
+      <h3>Request a Quote</h3>
+      <form onsubmit="event.preventDefault(); alert('Thank you! Your quote request has been submitted.');">
+        <select required>
+          <option value="">Select Service</option>
+          <option>Maintenance</option>
+          <option>Residental Service</option>
+          <option>Commercial Service</option>
+        </select>
+        <input type="text" placeholder="name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="Message" required></textarea>
+        <button class="btn" type="submit">Request Free Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section sectors" id="elements">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Our Capturing Market Sectors</h2>
+      <p>Who are in extremely love with eco friendly system..</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-img">
+          <img src="https://preview.colorlib.com/theme/industry/img/s1.jpg" alt="Automotive Engineering" onerror="this.src='https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=85'">
+        </div>
+        <h3>Automotive Engineering</h3>
+        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card-img">
+          <img src="https://preview.colorlib.com/theme/industry/img/s2.jpg" alt="Construction & Engineering" onerror="this.src='https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85'">
+        </div>
+        <h3>Construction &amp; Engineering</h3>
+        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card-img">
+          <img src="https://preview.colorlib.com/theme/industry/img/s3.jpg" alt="Industrial Engineering" onerror="this.src='https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=85'">
+        </div>
+        <h3>Industrial Engineering</h3>
+        <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct women face higher conduct.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="counters">
+  <div class="container counter-grid">
+    <div class="counter reveal"><div class="circle" data-target="2000">2K+</div><span>Projects Completed</span></div>
+    <div class="counter reveal"><div class="circle" data-target="5500">5.5K</div><span>Total Employees</span></div>
+    <div class="counter reveal"><div class="circle" data-target="959">959</div><span>Happy Clients</span></div>
+    <div class="counter reveal"><div class="circle" data-target="367">367</div><span>Tickets Submitted</span></div>
+  </div>
+</section>
+
+<section class="section projects" id="projects">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Latest Finished Projects</h2>
+      <p>Who are in extremely love with eco friendly system..</p>
+    </div>
+
+    <div class="project-grid">
+      <div class="project big-project reveal">
+        <img src="https://preview.colorlib.com/theme/industry/img/p1.jpg" alt="Industrial project" onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1400&q=85'">
+      </div>
+      <div class="project side-project reveal">
+        <img src="https://preview.colorlib.com/theme/industry/img/p2.jpg" alt="Industrial project" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=85'">
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project small-project reveal">
+        <img src="https://preview.colorlib.com/theme/industry/img/p3.jpg" alt="Industrial project" onerror="this.src='https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1000&q=85'">
+      </div>
+      <div class="project small-project reveal">
+        <img src="https://preview.colorlib.com/theme/industry/img/p4.jpg" alt="Industrial project" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonial">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Enjoy our Client’s Feedback</h2>
+      <p>Who are in extremely love with eco friendly system..</p>
+    </div>
+
+    <div class="testimonial-wrap">
+      <div class="video-card reveal">
+        <a class="play" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" aria-label="Play video">
+          <i class="fa-solid fa-play"></i>
+        </a>
+      </div>
+
+      <div class="review reveal">
+        <h3>Fannie Rowe <span class="stars">★★★★★</span></h3>
+        <p>Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker. Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker.</p>
+        <div class="dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section blog" id="blog">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Latest Posts From Our Blog</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut<br>labore et dolore magna aliqua.</p>
+    </div>
+
+    <div class="blog-grid">
+      <article class="blog-card reveal">
+        <div class="blog-img"><img src="https://preview.colorlib.com/theme/industry/img/b1.jpg" alt="Industrial blog" onerror="this.src='https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=85'"></div>
+        <div class="meta"><span>Mark Wiens</span><span>13th Dec &nbsp; ♡ 15 &nbsp; ♡ 04</span></div>
+        <h3>Portable Fashion For Young Women</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-img"><img src="https://preview.colorlib.com/theme/industry/img/b2.jpg" alt="Industrial blog" onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=900&q=85'"></div>
+        <div class="meta"><span>Mark Wiens</span><span>13th Dec &nbsp; ♡ 15 &nbsp; ♡ 04</span></div>
+        <h3>Portable Fashion For Young Women</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+      <article class="blog-card reveal">
+        <div class="blog-img"><img src="https://preview.colorlib.com/theme/industry/img/b3.jpg" alt="Industrial blog" onerror="this.src='https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&w=900&q=85'"></div>
+        <div class="meta"><span>Mark Wiens</span><span>13th Dec &nbsp; ♡ 15 &nbsp; ♡ 04</span></div>
+        <h3>Portable Fashion For Young Women</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h3>About Us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+      <div class="copyright">Copyright ©2026 All rights reserved | This template is made with <span class="yellow">♥</span> by <span class="yellow">Colorlib</span></div>
+    </div>
+    <div>
+      <h3>Newsletter</h3>
+      <p>Stay update with our latest</p>
+      <form class="newsletter" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <input type="email" placeholder="Enter Email" required>
+        <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+      </form>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <p>Let us be social</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-solid fa-basketball"></i></a>
+        <a href="#"><i class="fa-brands fa-behance"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const nav=document.getElementById("nav");
+menuToggle.addEventListener("click",()=>nav.classList.toggle("open"));
+document.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+
+const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");revealObserver.unobserve(entry.target)}})
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>revealObserver.observe(el));
+
+const counterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    const el=entry.target, target=Number(el.dataset.target);
+    let start=0;
+    const duration=1100, startTime=performance.now();
+    function tick(now){
+      const p=Math.min((now-startTime)/duration,1);
+      const value=Math.floor(start+(target-start)*(1-Math.pow(1-p,3)));
+      el.textContent=target>=1000?(target===5500?(value/1000).toFixed(1)+"K":Math.floor(value/1000)+"K+"):(value);
+      if(p<1)requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    counterObserver.unobserve(el);
+  })
+},{threshold:.5});
+document.querySelectorAll(".circle[data-target]").forEach(el=>counterObserver.observe(el));
+
+const dots=document.querySelectorAll(".dot");
+dots.forEach((dot,i)=>dot.addEventListener("click",()=>{
+  dots.forEach(d=>d.classList.remove("active"));
+  dot.classList.add("active");
+}));
+</script>
+
+</body>
+</html>
